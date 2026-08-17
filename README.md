@@ -1,70 +1,464 @@
-# Getting Started with Create React App
+🎬 CineVault
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern movie and TV-series discovery platform built with React.js, Firebase, Tailwind CSS and the TMDB ecosystem.
 
-## Available Scripts
+CineVault provides a clean and responsive interface for discovering movies and TV shows, searching and filtering entertainment content, viewing detailed information, managing personal lists, and exploring public lists.
 
-In the project directory, you can run:
+✨ Overview
 
-### `npm start`
+CineVault is a React-based entertainment discovery web application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The platform is designed around a simple idea:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Discover → Explore → Organize → Enjoy
 
-### `npm test`
+Users can browse popular and latest movies/series, search for specific titles, open detailed movie/series pages, authenticate with their account, create personal lists, and explore lists shared by the community.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Note: CineVault is a discovery and organization platform. It does not provide unauthorized movie or TV streaming.
 
-### `npm run build`
+🚀 Key Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🎥 Movie Discovery
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Browse popular movies.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Explore latest/trending content.
 
-### `npm run eject`
+View movie details.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+View ratings, release information and artwork.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Explore similar movies.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+📺 TV Series Discovery
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Dedicated TV-series section.
 
-## Learn More
+Browse latest series.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+View series details.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Explore similar series.
 
-### Code Splitting
+View ratings and release information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🔎 Search & Filtering
 
-### Analyzing the Bundle Size
+Search movies by title.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Search TV series by title.
 
-### Making a Progressive Web App
+Filter content according to available categories.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Dedicated search components for movies and TV shows.
 
-### Advanced Configuration
+👤 Authentication
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Firebase-based authentication.
 
-### Deployment
+User registration and login.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+User profile functionality.
 
-### `npm run build` fails to minify
+Logout/settings functionality.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Personalized user experience.
+
+📚 Personal Lists
+
+Authenticated users can:
+
+Create lists.
+
+Edit lists.
+
+Delete lists.
+
+Add movies/series to lists.
+
+Organize favorite content.
+
+🌍 Public Lists
+
+Users can publish lists and explore lists shared by the community.
+
+🌓 Dark / Light Theme
+
+Theme toggle.
+
+Responsive styling.
+
+Dark-mode compatible interface.
+
+📱 Responsive UI
+
+CineVault is designed to work across:
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+🏗️ Project Architecture
+
+                         ┌─────────────────────────┐
+                         │       CineVault UI      │
+                         │       React.js          │
+                         └────────────┬────────────┘
+                                      │
+                    ┌─────────────────┼─────────────────┐
+                    │                 │                 │
+                    ▼                 ▼                 ▼
+             ┌─────────────┐   ┌─────────────┐   ┌──────────────┐
+             │ React Router│   │ Tailwind CSS│   │ Firebase Auth│
+             └──────┬──────┘   └─────────────┘   └──────┬───────┘
+                    │                                   │
+                    ▼                                   ▼
+             ┌─────────────┐                     ┌──────────────┐
+             │ Components  │                     │ User / Lists │
+             └──────┬──────┘                     └──────┬───────┘
+                    │                                   │
+                    ▼                                   ▼
+             ┌──────────────────────────────────────────────┐
+             │              Data Fetching Layer             │
+             │  allFetcher / oneFetcher / databaseFetcher   │
+             └──────────────────────┬───────────────────────┘
+                                    │
+                       ┌────────────┴────────────┐
+                       ▼                         ▼
+                ┌─────────────┐          ┌──────────────┐
+                │ Movie / TV  │          │   Firebase   │
+                │ Data / API  │          │ Auth / Data  │
+                └─────────────┘          └──────────────┘
+
+📂 Project Structure
+
+cinevault/
+│
+├── public/
+│   ├── Brn.png
+│   └── index.html
+│
+├── src/
+│   │
+│   ├── auth/
+│   │   ├── firebase.js
+│   │   ├── login.js
+│   │   ├── profile.js
+│   │   ├── register.js
+│   │   └── sett&logout.js
+│   │
+│   ├── components/
+│   │   ├── SearchBars/
+│   │   │   ├── searchDivMovie.js
+│   │   │   └── searchDivTv.js
+│   │   │
+│   │   ├── lists/
+│   │   │   ├── Public/
+│   │   │   ├── addList.js
+│   │   │   ├── listCard.js
+│   │   │   ├── listInside.js
+│   │   │   ├── myLists.js
+│   │   │   └── updList.js
+│   │   │
+│   │   ├── about.js
+│   │   ├── carousel.js
+│   │   ├── filter.js
+│   │   ├── home.js
+│   │   ├── lists.js
+│   │   ├── movieDetails.js
+│   │   ├── movies.js
+│   │   ├── results.js
+│   │   ├── smallCard.js
+│   │   └── tvShows.js
+│   │
+│   ├── movie/
+│   │   ├── allFetcher.js
+│   │   ├── databaseFetcher.js
+│   │   └── oneFetcher.js
+│   │
+│   ├── static/
+│   │   ├── animations.js
+│   │   ├── footer.js
+│   │   ├── header.js
+│   │   ├── loading.js
+│   │   └── toast.js
+│   │
+│   ├── style/
+│   │   ├── global.css
+│   │   ├── themeBtn.js
+│   │   └── useTheme.js
+│   │
+│   ├── App.js
+│   └── index.js
+│
+├── .env
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── tailwind.config.js
+└── README.md
+
+🧩 Main Modules
+
+src/auth/
+
+Responsible for authentication and user-related functionality.
+
+firebase.js       → Firebase configuration
+login.js          → Login
+register.js       → Registration
+profile.js        → User profile
+sett&logout.js    → Settings / logout
+
+src/components/
+
+Contains the primary UI components and application pages.
+
+Important modules include:
+
+home.js           → Homepage
+movies.js         → Movies section
+tvShows.js        → TV Shows section
+movieDetails.js   → Movie/series details
+about.js          → About / developer page
+results.js        → Search results
+filter.js         → Filtering
+carousel.js       → Homepage carousel
+
+src/components/lists/
+
+Handles user-created and public lists.
+
+addList.js        → Create list
+updList.js        → Update list
+listCard.js       → List preview
+listInside.js     → List details
+myLists.js        → Personal lists
+Public/           → Public community lists
+
+src/movie/
+
+Contains data-fetching utilities.
+
+allFetcher.js
+oneFetcher.js
+databaseFetcher.js
+
+These modules separate data retrieval from the UI components.
+
+src/static/
+
+Contains reusable application-level UI utilities:
+
+header.js
+footer.js
+animations.js
+loading.js
+toast.js
+
+src/style/
+
+Contains theme and global styling functionality.
+
+🛠️ Technology Stack
+
+Technology
+
+Purpose
+
+React.js
+
+Frontend application
+
+JavaScript
+
+Application logic
+
+React Router
+
+Client-side navigation
+
+Tailwind CSS
+
+UI styling
+
+Firebase
+
+Authentication / application data
+
+TMDB ecosystem
+
+Movie and TV content
+
+HTML5
+
+Application structure
+
+CSS3
+
+Styling and animations
+
+npm
+
+Package management
+
+Git & GitHub
+
+Version control
+
+⚙️ Installation & Setup
+
+1. Clone the repository
+
+git clone https://github.com/JayeshGujar327/cinevault.git
+
+cd cinevault
+
+2. Install dependencies
+
+npm install
+
+3. Configure environment variables
+
+Create a .env file in the project root.
+
+Example:
+
+REACT_APP_API_KEY=YOUR_API_KEY
+REACT_APP_AUTH_DOMAIN=YOUR_FIREBASE_AUTH_DOMAIN
+REACT_APP_DATABASE_URL=YOUR_FIREBASE_DATABASE_URL
+REACT_APP_PROJECT_ID=YOUR_FIREBASE_PROJECT_ID
+REACT_APP_STORAGE_BUCKET=YOUR_FIREBASE_STORAGE_BUCKET
+REACT_APP_MESSAGING_SENDER_ID=YOUR_MESSAGING_SENDER_ID
+REACT_APP_APP_ID=YOUR_FIREBASE_APP_ID
+REACT_APP_MEASUREMENT_ID=YOUR_MEASUREMENT_ID
+REACT_APP_COMPANY_NAME=CineVault
+
+Never publish private credentials or secrets in a public repository.
+
+4. Start the development server
+
+This project uses Create React App, so run:
+
+npm start
+
+The application normally opens at:
+
+http://localhost:3000
+
+🧪 Production Build
+
+Create an optimized production build:
+
+npm run build
+
+The production files will be generated inside:
+
+build/
+
+🔐 Environment Variables
+
+CineVault uses environment variables for configuration.
+
+The application name is controlled by:
+
+REACT_APP_COMPANY_NAME=CineVault
+
+This allows the interface to display CineVault consistently throughout reusable components.
+
+🎨 UI & UX
+
+The interface focuses on:
+
+Clean movie-card layouts
+
+Responsive navigation
+
+Dark/light theme
+
+Animated interactions
+
+Movie posters and visual discovery
+
+Search and filtering
+
+Personalized lists
+
+Responsive layouts
+
+Reusable React components
+
+👨‍💻 Developer
+
+Jayesh Gujar
+
+Developer & Maintainer
+
+I am a Computer Science developer interested in building modern web applications, exploring full-stack development, and creating practical user-focused products.
+
+Connect With Me
+
+Platform
+
+Link
+
+GitHub
+
+https://github.com/JayeshGujar327
+
+LinkedIn
+
+https://www.linkedin.com/in/jayesh-gujar-943626315/
+
+Instagram
+
+https://www.instagram.com/thejayesh327/
+
+Email
+
+gujarj327@gmail.com
+
+🔗 Social Links
+
+GitHub:
+https://github.com/JayeshGujar327
+
+LinkedIn:
+https://www.linkedin.com/in/jayesh-gujar-943626315/
+
+Instagram:
+https://www.instagram.com/thejayesh327/
+
+Email:
+gujarj327@gmail.com
+
+🙌 Credits & Attribution
+
+CineVault is a customized version of the movie-library project from which this codebase was developed.
+
+The original repository/project should be credited appropriately:
+
+Original repository: YassineBenZriouil/Filmory
+
+This version has been customized with the CineVault branding, UI/content updates, developer information, and additional presentation changes.
+
+📌 Current Repository
+
+GitHub:
+https://github.com/JayeshGujar327/cinevault
+
+📄 License
+
+This repository contains a customized project based on an existing movie-library codebase.
+
+Before redistributing the project commercially, review the original project's license and third-party API/service terms.
+
+⭐ Support
+
+If you find CineVault useful, consider starring the repository on GitHub.
+
+Built with React.js ❤️ by Jayesh Gujar
