@@ -1,5 +1,7 @@
 🎬 CineVault
 
+https://jcinevault.netlify.app/
+
 A modern movie and TV-series discovery platform built with React.js, Firebase, Tailwind CSS and the TMDB ecosystem.
 
 CineVault provides a clean and responsive interface for discovering movies and TV shows, searching and filtering entertainment content, viewing detailed information, managing personal lists, and exploring public lists.
